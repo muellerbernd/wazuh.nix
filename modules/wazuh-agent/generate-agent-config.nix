@@ -1,3 +1,4 @@
+# TODO make this use a proper xml serialization function and manipulate values as nix attributes.
 {cfg, ...}: let
   upstreamConfig = builtins.readFile (builtins.fetchurl {
     url = "https://raw.githubusercontent.com/wazuh/wazuh/refs/tags/v${cfg.package.version}/etc/ossec-agent.conf";
@@ -14,4 +15,7 @@
     "<location>/var/log/syslog</location>" = "<location>journald</location>";
   };
 in
-  builtins.replaceStrings (builtins.attrNames substitutes) (builtins.attrValues substitutes) upstreamConfig
+  builtins.replaceStrings
+  (builtins.attrNames substitutes)
+  (builtins.attrValues substitutes)
+  upstreamConfig
