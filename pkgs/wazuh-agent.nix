@@ -180,7 +180,7 @@
 in
   stdenv.mkDerivation rec {
     pname = "wazuh-agent";
-    version = "4.9.1";
+    version = "4.11.1";
 
     meta = {
       description = "Wazuh agent for NixOS";
@@ -191,7 +191,7 @@ in
       owner = "wazuh";
       repo = "wazuh";
       rev = "v${version}";
-      sha256 = "sha256-OiNwKX/bGjh9e7EQ/8ylY2SSjifqu9vfpne9mvHvEmM=";
+      sha256 = "sha256-bBGvslQ9aAMl33AtFEccvtw2II5c8fMlHeNOJuhOPJM=";
     };
 
     enableParallelBuilding = true;
